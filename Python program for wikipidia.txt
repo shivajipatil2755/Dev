@@ -1,0 +1,81 @@
+1.Write a python program to display all the header tags from‘en.wikipedia.org/wiki/Main_Page’
+
+Ans
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+html = urlopen('https://en.wikipedia.org/wiki/Main_Page')
+bs = BeautifulSoup(html, "html.parser")
+titles = bs.find_all(['h1', 'h2','h3','h4','h5','h6'])
+print('List all the header tags :', *titles, sep='\n\n')
+output:
+List all the header tags :
+
+<h1 class="firstHeading" id="firstHeading">Main Page</h1>
+
+<h2 class="mp-h2" id="mp-tfa-h2"><span id="From_today.27s_featured_article"></span><span class="mw-headline" id="From_today's_featured_article">From today's featured article</span></h2>
+
+<h2 class="mp-h2" id="mp-dyk-h2"><span class="mw-headline" id="Did_you_know_...">Did you know ...</span></h2>
+
+<h2 class="mp-h2" id="mp-itn-h2"><span class="mw-headline" id="In_the_news">In the news</span></h2>
+
+<h2 class="mp-h2" id="mp-otd-h2"><span class="mw-headline" id="On_this_day">On this day</span></h2>
+
+<h2 class="mp-h2" id="mp-tfl-h2"><span id="From_today.27s_featured_list"></span><span class="mw-headline" id="From_today's_featured_list">From today's featured list</span></h2>
+
+<h2 class="mp-h2" id="mp-tfp-h2"><span id="Today.27s_featured_picture"></span><span class="mw-headline" id="Today's_featured_picture">Today's featured picture</span></h2>
+
+<h2 class="mp-h2" id="mp-other"><span class="mw-headline" id="Other_areas_of_Wikipedia">Other areas of Wikipedia</span></h2>
+
+<h2 class="mp-h2" id="mp-sister"><span id="Wikipedia.27s_sister_projects"></span><span class="mw-headline" id="Wikipedia's_sister_projects">Wikipedia's sister projects</span></h2>
+
+<h2 class="mp-h2" id="mp-lang"><span class="mw-headline" id="Wikipedia_languages">Wikipedia languages</span></h2>
+
+<h2>Navigation menu</h2>
+
+<h3 class="vector-menu-heading" id="p-personal-label">
+<span>Personal tools</span>
+</h3>
+
+<h3 class="vector-menu-heading" id="p-namespaces-label">
+<span>Namespaces</span>
+</h3>
+
+<h3 class="vector-menu-heading" id="p-variants-label">
+<span>Variants</span>
+</h3>
+
+<h3 class="vector-menu-heading" id="p-views-label">
+<span>Views</span>
+</h3>
+
+<h3 class="vector-menu-heading" id="p-cactions-label">
+<span>More</span>
+</h3>
+
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+
+<h3 class="vector-menu-heading" id="p-navigation-label">
+<span>Navigation</span>
+</h3>
+
+<h3 class="vector-menu-heading" id="p-interaction-label">
+<span>Contribute</span>
+</h3>
+
+<h3 class="vector-menu-heading" id="p-tb-label">
+<span>Tools</span>
+</h3>
+
+<h3 class="vector-menu-heading" id="p-coll-print_export-label">
+<span>Print/export</span>
+</h3>
+
+<h3 class="vector-menu-heading" id="p-wikibase-otherprojects-label">
+<span>In other projects</span>
+</h3>
+
+<h3 class="vector-menu-heading" id="p-lang-label">
+<span>Languages</span>
+</h3>
